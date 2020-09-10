@@ -56,8 +56,6 @@ const SignIn: React.FC = () => {
           email,
           password,
         });
-
-        console.log({ email, password });
       } catch (err) {
         setError(err.response.data.message);
       }

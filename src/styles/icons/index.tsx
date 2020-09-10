@@ -3,11 +3,27 @@ import { Collection } from '@styled-icons/boxicons-solid';
 import { LogOutCircle } from '@styled-icons/boxicons-regular';
 import { AddShoppingCart } from '@styled-icons/material';
 import { Settings } from '@styled-icons/evaicons-solid/';
+import { Search } from '@styled-icons/evaicons-solid/';
+import { NotificationsNone } from '@styled-icons/material/';
+import { DotsVerticalRounded } from '@styled-icons/boxicons-regular';
+import { PencilAlt } from '@styled-icons/heroicons-outline/';
 
 const iconNavigationCss = css`
   width: 40px;
   height: 40px;
 `;
+
+const iconHeaderCss = css`
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+`;
+
+// Navigation Icons
 
 export const DashboardIcon = styled(Collection)`
   ${iconNavigationCss}
@@ -21,6 +37,20 @@ export const SettingsIcon = styled(Settings)`
   ${iconNavigationCss}
 `;
 
+// Header Icons
+
+export const NotificationIcon = styled(NotificationsNone)`
+  ${iconHeaderCss}
+`;
+
+export const SearchIcon = styled(Search)`
+  ${iconHeaderCss}
+`;
+
+export const NoteIcon = styled(PencilAlt)`
+  ${iconHeaderCss}
+`;
+
 export const LogOutIcon = styled(LogOutCircle)`
   position: absolute;
   left: 0;
@@ -31,4 +61,13 @@ export const LogOutIcon = styled(LogOutCircle)`
 
   fill: var(--black);
   opacity: 0.8;
+`;
+
+// Current Budget Icons
+
+export const OptionsIcon = styled(DotsVerticalRounded)`
+  width: 30px;
+  height: 30px;
+
+  fill: var(--black);
 `;
