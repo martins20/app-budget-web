@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <Container>
-      <NavigationBar />
+      <NavigationBar handleSignOut={handleSignOut} />
       <MainContainer />
       <CurrentBudget />
     </Container>

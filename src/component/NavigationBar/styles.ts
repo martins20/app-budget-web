@@ -18,12 +18,23 @@ export const Container = styled.div`
   padding: 40px 15px;
 `;
 
-export const NavigationItems = styled.nav``;
+export const NavigationItems = styled.nav`
+  width: 100%;
 
-export const LogoutButton = styled.div`
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LogoutButton = styled.button`
   position: relative;
   display: flex;
   align-items: center;
+
+  border-radius: 25px;
 
   svg {
     display: none;

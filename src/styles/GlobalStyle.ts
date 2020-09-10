@@ -28,7 +28,7 @@ export default createGlobalStyle`
         --light-gray: #d6d6d6;    
 
         --purple: #432cff;        
-        --blue: #0186d1;
+        --blue: #2c53ff;
         --error: #EF6F6C;
     }
 `;

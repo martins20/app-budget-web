@@ -8,11 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: rgb(252, 253, 255);
-  background: linear-gradient(
-    151deg,
-    rgba(252, 253, 255, 1) 30%,
-    rgba(160, 213, 245, 1) 100%
-  );
+  background: linear-gradient(151deg, rgba(252, 253, 255, 1) 30%, #9eb0ff 100%);
 
   @media (max-width: 400px) {
     flex-direction: column;
