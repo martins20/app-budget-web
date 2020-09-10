@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { logout, isAuthenticated } from '../../services/auth';
+import { logout } from '../../services/auth';
 
-// import { Container } from './styles';
+import NavigationBar from '../../component/NavigationBar';
+import MainContainer from '../../component/MainContainer';
+import CurrentBudget from '../../component/CurrentBudget';
+
+import { Container } from './styles';
 
 const Dashboard: React.FC = () => {
   const history = useHistory();
@@ -12,7 +16,14 @@ const Dashboard: React.FC = () => {
 
     history.push('/signin');
   };
-  return <button onClick={handleSignOut}>Sair</button>;
+
+  return (
+    <Container>
+      <NavigationBar />
+      <MainContainer />
+      <CurrentBudget />
+    </Container>
+  );
 };
 
 export default Dashboard;
