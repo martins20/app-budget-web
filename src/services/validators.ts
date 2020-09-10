@@ -3,6 +3,7 @@ import api from './api';
 interface LoginProps {
   email: string;
   password: string;
+  passwordConfirm?: string;
   error?: string;
   setError?: any;
   setPassword?: any;
@@ -11,7 +12,7 @@ interface LoginProps {
 const checkFormIsValid = async ({
   email,
   password,
-  error,
+  passwordConfirm,
   setError,
 }: LoginProps) => {
   if (email.length <= 0 || !email.includes('@')) {
@@ -21,23 +22,30 @@ const checkFormIsValid = async ({
 
   if (password.length <= 0 || password.length <= 6) {
     setError('Password is invalid');
-
     return false;
   }
-  setError('');
+
+  if (passwordConfirm && passwordConfirm.length <= 0) {
+    setError('password confirmation is invalid');
+    return false;
+  }
+
+  if (passwordConfirm !== password) {
+    setError('passwords does not match');
+    return false;
+  }
 
   // Check if credentials match
   try {
-    const { data } = await api.post('sessions', {
+    await api.post('sessions', {
       email,
       password,
     });
-
-    console.log(data);
   } catch (err) {
     setError(err.response.data.message);
   }
 
+  setError('');
   return true;
 };
 

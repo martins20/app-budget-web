@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: rgb(252, 253, 255);
-  background: linear-gradient(151deg, rgba(252, 253, 255, 1) 30%, #9eb0ff 100%);
+  background: linear-gradient(151deg, rgba(252, 253, 255, 1) 30%, #f0f2fa 100%);
 
   @media (max-width: 400px) {
     flex-direction: column;
@@ -65,6 +65,10 @@ export const FormContainer = styled.section`
 export const Form = styled.form`
   width: 100%;
   margin-bottom: 40px;
+
+  span {
+    color: var(--error);
+  }
 `;
 
 export const Header = styled.header`
@@ -105,7 +109,7 @@ export const SignUpButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background: #11a3f5;
+    background: var(--purple);
   }
 `;
 
@@ -128,7 +132,7 @@ export const SignInContainer = styled.div`
 
       &:hover {
         cursor: pointer;
-        color: #11a3f5;
+        color: var(--purple);
       }
     }
   }
