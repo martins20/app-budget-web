@@ -4,10 +4,13 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { isAuthenticated } from './services/auth';
 
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Dashboard from './pages/Dashboard';
 
 interface PrivateRouteParams {
   component?: any;
   path?: string;
+  exact?: boolean;
 }
 
 const PrivateRoute = ({
@@ -20,7 +23,9 @@ const PrivateRoute = ({
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+        <Redirect
+          to={{ pathname: '/signin', state: { from: props.location } }}
+        />
       )
     }
   />
@@ -29,8 +34,10 @@ const PrivateRoute = ({
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={SignIn} />
-      <Route path="*" component={() => <h1>Page not found</h1>} />
+      <Route path="/signin" component={SignIn} />
+      <Route path="/signup" component={SignUp} />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
+      <Route path="*" component={() => <Redirect to="/dashboard" />} />
     </Switch>
   </BrowserRouter>
 );

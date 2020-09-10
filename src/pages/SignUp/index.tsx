@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+
+import Input from '../../component/Input';
 import { useHistory } from 'react-router-dom';
 
-import api from '../../services/api';
-import Input from '../../component/Input';
-
-import { login, isAuthenticated } from '../../services/auth';
-
 import SignInBackground from '../../assets/sign-in-bg.jpeg';
+import { isAuthenticated } from '../../services/auth';
 
 import {
   Container,
@@ -19,35 +17,19 @@ import {
   SignInContainer,
 } from './styles';
 
-interface Response {
-  token: string;
-  user: User;
-}
-
-interface User {
-  id: string;
-}
-
 const SignIn: React.FC = () => {
   let history = useHistory();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (isAuthenticated()) return history.push('/dashboard');
   }, [history]);
 
-  const handleNavigateToSignUp = () => {
-    history.push('/signup');
+  const handleSignUp = async () => {
+    // return history.push('/dashboard');
   };
 
-  // Redirects to /dashboard and saves token and user_id on localStorage
-  const handleSignIn = async () => {
-    const { data } = await api.post<Response>('sessions', { email, password });
-
-    login(data.token, data.user.id);
-    return history.push('/dashboard');
+  const handleNavigateToSignIn = () => {
+    // history.push('/');
   };
 
   return (
@@ -57,33 +39,39 @@ const SignIn: React.FC = () => {
 
         <FormContainer>
           <Header>
-            <strong>App Budget!</strong>
-            <span>Sign In and calculate how much your app costs!</span>
+            <strong>Register now!</strong>
+            <span>Sign Up by entering the details below.</span>
           </Header>
 
           <Form>
             <Input
               label="e-mail"
               placeholder="Enter your best e-mail"
-              onChange={e => setEmail(e.currentTarget.value)}
-              value={email}
+              onChange={() => {}}
               type="email"
               required
             />
             <Input
               label="password"
               placeholder="*********"
-              onChange={e => setPassword(e.currentTarget.value)}
+              onChange={() => {}}
+              type="password"
+              required
+            />
+            <Input
+              label="confirm password"
+              placeholder="*********"
+              onChange={() => {}}
               type="password"
               required
             />
           </Form>
           <SignInContainer>
-            <SignUpButton onClick={handleSignIn}>Sign In</SignUpButton>
+            <SignUpButton onClick={handleSignUp}>Sign Up</SignUpButton>
             <small>
               Already have an account?{' '}
-              <a href="/signup" onClick={handleNavigateToSignUp}>
-                Sign Up
+              <a href="/signin" onClick={handleNavigateToSignIn}>
+                Sign In
               </a>
             </small>
           </SignInContainer>
