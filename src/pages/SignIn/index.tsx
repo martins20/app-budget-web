@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
@@ -18,6 +18,7 @@ import {
   SignUpButton,
   SignInContainer,
 } from './styles';
+import checkFormIsValid from '../../services/validators';
 
 interface Response {
   token: string;
@@ -33,6 +34,7 @@ const SignIn: React.FC = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (isAuthenticated()) return history.push('/dashboard');
@@ -44,10 +46,15 @@ const SignIn: React.FC = () => {
 
   // Redirects to /dashboard and saves token and user_id on localStorage
   const handleSignIn = async () => {
-    const { data } = await api.post<Response>('sessions', { email, password });
+    if (checkFormIsValid({ email, password, error, setError })) {
+      const { data } = await api.post<Response>('sessions', {
+        email,
+        password,
+      });
 
-    login(data.token, data.user.id);
-    return history.push('/dashboard');
+      login(data.token, data.user.id);
+      return history.push('/dashboard');
+    }
   };
 
   return (
@@ -61,11 +68,15 @@ const SignIn: React.FC = () => {
             <span>Sign In and calculate how much your app costs!</span>
           </Header>
 
-          <Form>
+          <Form onSubmit={handleNavigateToSignUp}>
+            <span>{error}</span>
             <Input
               label="e-mail"
               placeholder="Enter your best e-mail"
-              onChange={e => setEmail(e.currentTarget.value)}
+              onChange={e => {
+                setEmail(e.currentTarget.value);
+                setError('');
+              }}
               value={email}
               type="email"
               required
@@ -73,7 +84,10 @@ const SignIn: React.FC = () => {
             <Input
               label="password"
               placeholder="*********"
-              onChange={e => setPassword(e.currentTarget.value)}
+              onChange={e => {
+                setPassword(e.currentTarget.value);
+                setError('');
+              }}
               type="password"
               required
             />

@@ -69,6 +69,13 @@ export const FormContainer = styled.section`
 export const Form = styled.form`
   width: 100%;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    color: var(--error);
+  }
 `;
 
 export const Header = styled.header`

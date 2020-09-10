@@ -29,5 +29,6 @@ export default createGlobalStyle`
 
         --purple: #432cff;        
         --blue: #0186d1;
+        --error: #EF6F6C;
     }
 `;
