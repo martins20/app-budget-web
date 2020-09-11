@@ -66,7 +66,11 @@ const MainContainer: React.FC = () => {
         </FilterContainer>
       </Heading>
 
-      {makingNewBudget ? <BudgetStore /> : <BudgetList />}
+      {makingNewBudget ? (
+        <BudgetStore setMakingNewBudget={setMakingNewBudget} />
+      ) : (
+        <BudgetList />
+      )}
     </Container>
   );
 };

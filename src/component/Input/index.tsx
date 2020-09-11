@@ -13,6 +13,7 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   type,
+  min,
 }) => {
   return (
     <Container>
@@ -23,6 +24,7 @@ const Input: React.FC<InputProps> = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        min={min}
       />
     </Container>
   );
