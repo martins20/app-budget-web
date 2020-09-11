@@ -11210,3 +11210,8 @@ yup@^0.29.3:
     property-expr "^2.0.2"
     synchronous-promise "^2.0.13"
     toposort "^2.0.2"
+
+zustand@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.1.1.tgz#c48d7d4f612aa0e4c64568db931645f179e6275b"
+  integrity sha512-VypPwGrcmUp0gjdKiW2W+RzcPSKl8VYBiP1QxAX0AsiSTh7M2al6+8zWxnWNSem+Z6gqPN3anNp12q+1MiH32w==

@@ -11,6 +11,7 @@ import {
   Footer,
 } from './styles';
 import { OptionsIcon } from '../../styles/icons';
+import useStore from '../../store/useStore';
 
 interface Budget {
   budget: {
@@ -26,6 +27,8 @@ interface Budget {
 }
 
 const BudgetCard: React.FC<Budget> = ({ budget }: Budget) => {
+  const setCurrentBudget: any = useStore(state => state.setCurrentBudget);
+
   const {
     id,
     dev_amount,
@@ -68,7 +71,7 @@ const BudgetCard: React.FC<Budget> = ({ budget }: Budget) => {
   }).format(total_price);
 
   return (
-    <Container key={id}>
+    <Container key={id} onClick={() => setCurrentBudget(budget)}>
       <Color color={pickHandleColor()} />
       <Price>$ {formated_price}</Price>
       <Days>{days_amount} days</Days>

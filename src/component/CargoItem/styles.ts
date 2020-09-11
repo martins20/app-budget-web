@@ -36,7 +36,8 @@ export const Container = styled.div`
     }
 
     > small {
-      color: var(--light-gray);
+      color: var(--gray);
+      font-size: 14px;
     }
   }
 `;
