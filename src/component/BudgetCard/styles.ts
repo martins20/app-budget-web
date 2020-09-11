@@ -4,7 +4,8 @@ export const Container = styled.div`
   background: var(--white);
 
   width: 100%;
-  height: 300px;
+  min-height: 300px;
+  height: 100%;
 
   border-radius: 32px;
 

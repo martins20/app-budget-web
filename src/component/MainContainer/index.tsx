@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   SearchIcon,
@@ -18,10 +18,21 @@ import {
   NotificationContainer,
   Heading,
   Title,
+  TitleContainer,
+  AddIcon,
   FilterContainer,
 } from './styles';
+import BudgetStore from '../BudgetStore';
 
 const MainContainer: React.FC = () => {
+  const [makingNewBudget, setMakingNewBudget] = useState(false);
+
+  const handleMakeNewBudget = () => {
+    if (makingNewBudget) return;
+
+    setMakingNewBudget(!makingNewBudget);
+  };
+
   return (
     <Container>
       <Header>
@@ -37,7 +48,16 @@ const MainContainer: React.FC = () => {
         </NotificationContainer>
       </Header>
       <Heading>
-        <Title>My Budgets</Title>
+        <TitleContainer>
+          <Title>My Budgets</Title>
+          <button
+            onClick={handleMakeNewBudget}
+            className={makingNewBudget ? 'unable' : ''}
+          >
+            <AddIcon />
+            Make Budget
+          </button>
+        </TitleContainer>
 
         <FilterContainer>
           <span>Sort By</span>
@@ -46,7 +66,7 @@ const MainContainer: React.FC = () => {
         </FilterContainer>
       </Heading>
 
-      <BudgetList />
+      {makingNewBudget ? <BudgetStore /> : <BudgetList />}
     </Container>
   );
 };

@@ -15,6 +15,8 @@ export const Container = styled.div`
   @media (max-width: 1200px) {
     grid-template-columns: repeat(1, 1fr);
   }
-`;
 
-export const Header = styled.header``;
+  @media (max-width: 600px) {
+    margin-top: 180px;
+  }
+`;

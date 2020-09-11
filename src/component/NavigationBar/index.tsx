@@ -59,7 +59,7 @@ const NavigationBar: React.FC<NavigationProps> = ({
         />
       </NavigationItems>
       <LogoutButton onClick={() => handleSignOut()}>
-        <UserAvatar src="https://placekitten.com/200/200" alt="avatar" />
+        <UserAvatar src="https://github.com/vmnog.png" alt="avatar" />
         <LogOutIcon />
       </LogoutButton>
     </Container>

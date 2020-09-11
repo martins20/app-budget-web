@@ -16,6 +16,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 15px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const NavigationItems = styled.nav`

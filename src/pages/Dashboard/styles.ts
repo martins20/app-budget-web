@@ -11,4 +11,8 @@ export const Container = styled.div`
   height: 100vh;
 
   background: var(--main-background);
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 0px auto 0px;
+  }
 `;

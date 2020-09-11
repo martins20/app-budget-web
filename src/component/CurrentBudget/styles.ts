@@ -20,6 +20,10 @@ export const Container = styled.div<ContainerProps>`
   padding: 30px;
 
   display: ${props => (props.shouldShow ? 'block' : 'none')};
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const Header = styled.header`

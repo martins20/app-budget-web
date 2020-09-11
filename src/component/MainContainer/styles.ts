@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CreateBudgetIcon } from '../../styles/icons';
 
 export const Container = styled.div`
   grid-area: MC;
@@ -69,10 +70,60 @@ export const Heading = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+export const AddIcon = styled(CreateBudgetIcon)`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  > button {
+    background: var(--purple);
+
+    flex-shrink: 0;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+  .unable {
+    background: var(--gray);
+    &:hover {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 3rem;
+  margin-right: 20px;
 `;
 
 export const FilterContainer = styled.div`
@@ -99,5 +150,11 @@ export const FilterContainer = styled.div`
     }
 
     cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 80px;
   }
 `;

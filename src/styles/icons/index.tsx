@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Collection } from '@styled-icons/boxicons-solid';
 import { LogOutCircle } from '@styled-icons/boxicons-regular';
 import { AddShoppingCart } from '@styled-icons/material';
 import { Settings } from '@styled-icons/evaicons-solid/';
@@ -8,6 +7,7 @@ import { NotificationsNone } from '@styled-icons/material/';
 import { DotsVerticalRounded } from '@styled-icons/boxicons-regular';
 import { PencilAlt } from '@styled-icons/heroicons-outline/';
 import { CaretDown } from '@styled-icons/boxicons-regular/';
+import { ViewGridAdd } from '@styled-icons/heroicons-solid/';
 
 const iconNavigationCss = css`
   width: 35px;
@@ -26,7 +26,7 @@ const iconHeaderCss = css`
 
 // Navigation Icons
 
-export const DashboardIcon = styled(Collection)`
+export const DashboardIcon = styled(ViewGridAdd)`
   ${iconNavigationCss}
 `;
 
