@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { Container, Header, Footer, CargoItem } from './styles';
-import { OptionsIcon } from '../../styles/icons';
+import CargoItem from '../CargoItem';
+
+import { Container, Header, Footer } from './styles';
 
 interface Budget {
   id?: string;
   user_id?: string;
+  dev_amount?: string;
   designer_amount?: number;
   sm_amount?: number;
   po_amount?: number;
@@ -15,6 +17,7 @@ interface Budget {
 const CurrentBudget: React.FC<Budget> = ({
   id,
   user_id,
+  dev_amount,
   designer_amount,
   sm_amount,
   po_amount,
@@ -25,22 +28,64 @@ const CurrentBudget: React.FC<Budget> = ({
       <Header>
         <h1>Total Project</h1>
         <img
-          src="https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
           alt="Project Photo"
         />
 
-        <b>3 Completed</b>
-        <small>from 5 project</small>
+        <b>$ 12.908</b>
+        <small>125 days</small>
       </Header>
       <Footer>
-        <CargoItem>
-          <div />
-          <section>
-            <b>Layouting</b>
-            <small>by Paulo Martins</small>
-          </section>
-          <OptionsIcon />
-        </CargoItem>
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
+        <CargoItem
+          cargo="Developer"
+          color="#432cff"
+          mathRecipe="1000 x 1 + 15%"
+        />
       </Footer>
     </Container>
   );

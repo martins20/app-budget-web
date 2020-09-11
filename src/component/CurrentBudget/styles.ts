@@ -33,16 +33,19 @@ export const Header = styled.header`
     height: 250px;
     border-radius: 50%;
     margin: 20px 0;
+    object-fit: cover;
 
     box-shadow: 0 1px 30px rgba(90, 42, 255, 0.2);
   }
 
   b {
     color: var(--black);
+    font-size: 1.5rem;
   }
 
   small {
     color: var(--gray);
+    font-size: 1.1rem;
   }
 `;
 
@@ -50,37 +53,11 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   height: 50%;
-  border: 1px solid red;
   padding: 20px 40px;
-`;
 
-export const CargoItem = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
+  overflow: scroll;
 
-  > div {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-
-    background: var(--purple);
-    border-radius: 50%;
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-
-    margin-right: auto;
-
-    b {
-      font-size: 18px;
-      color: var(--black);
-    }
-
-    > small {
-      color: (--light-gray);
-    }
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;

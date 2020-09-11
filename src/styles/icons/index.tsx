@@ -7,6 +7,7 @@ import { Search } from '@styled-icons/evaicons-solid/';
 import { NotificationsNone } from '@styled-icons/material/';
 import { DotsVerticalRounded } from '@styled-icons/boxicons-regular';
 import { PencilAlt } from '@styled-icons/heroicons-outline/';
+import { CaretDown } from '@styled-icons/boxicons-regular/';
 
 const iconNavigationCss = css`
   width: 40px;
@@ -64,8 +65,15 @@ export const LogOutIcon = styled(LogOutCircle)`
 `;
 
 // Current Budget Icons
-
 export const OptionsIcon = styled(DotsVerticalRounded)`
+  width: 30px;
+  height: 30px;
+
+  fill: var(--black);
+`;
+
+// Heading Icons
+export const FilterIcon = styled(CaretDown)`
   width: 30px;
   height: 30px;
 

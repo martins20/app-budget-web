@@ -58,4 +58,5 @@ export const LogoutButton = styled.button`
 export const UserAvatar = styled.img`
   width: 80px;
   border-radius: 25px;
+  object-fit: cover;
 `;

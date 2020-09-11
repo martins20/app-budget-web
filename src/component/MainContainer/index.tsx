@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { SearchIcon, NotificationIcon, NoteIcon } from '../../styles/icons';
+import {
+  SearchIcon,
+  NotificationIcon,
+  NoteIcon,
+  FilterIcon,
+} from '../../styles/icons';
 
 import BudgetList from '../BudgetList';
 
@@ -29,7 +34,6 @@ const MainContainer: React.FC = () => {
           <SearchInput placeholder="Search here" />
         </SearchContainer>
         <NotificationContainer>
-          {/* <NotificationIcon hasNotification /> */}
           <NotificationIcon />
           <NoteIcon />
         </NotificationContainer>
@@ -39,8 +43,9 @@ const MainContainer: React.FC = () => {
 
         <FilterContainer>
           <span>Sort By</span>
+          <strong>Recent Projects</strong>
           <SelectButton>
-            <DropBoxMenuIcon />
+            <FilterIcon />
           </SelectButton>
         </FilterContainer>
       </Heading>
