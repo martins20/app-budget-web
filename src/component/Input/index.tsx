@@ -5,6 +5,7 @@ import { Container } from './styles';
 interface InputProps extends HTMLProps<HTMLInputElement> {
   label: string;
   placeholder: string;
+  setDays?: Function;
 }
 
 const Input: React.FC<InputProps> = ({

@@ -18,9 +18,11 @@ interface Budget {
 const CurrentBudget: React.FC = () => {
   const current_budget: Budget | any = useStore(state => state.current_budget);
 
-  const formated_price = new Intl.NumberFormat('en-IN', {
-    maximumSignificantDigits: 3,
-  }).format(current_budget.total_price);
+  let formated_price = '';
+
+  if (current_budget.total_price) {
+    formated_price = current_budget.total_price.toLocaleString();
+  }
 
   return (
     <Container shouldShow={current_budget.total_price > 0}>

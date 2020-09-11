@@ -15,14 +15,14 @@ import useStore from '../../store/useStore';
 
 interface Budget {
   budget: {
-    id: string;
+    id?: string;
     dev_amount: number;
     designer_amount: number;
     sm_amount: number;
     po_amount: number;
     days_amount: number;
-    created_at: string;
-    total_price: number;
+    created_at?: string;
+    total_price?: number;
   };
 }
 
@@ -66,9 +66,11 @@ const BudgetCard: React.FC<Budget> = ({ budget }: Budget) => {
     return colors[colorIndex];
   };
 
-  const formated_price = new Intl.NumberFormat('en-IN', {
-    maximumSignificantDigits: 3,
-  }).format(total_price);
+  let formated_price = '';
+
+  if (total_price) {
+    formated_price = total_price.toLocaleString();
+  }
 
   return (
     <Container key={id} onClick={() => setCurrentBudget(budget)}>

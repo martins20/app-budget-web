@@ -11,7 +11,7 @@ export const Container = styled.div<ContainerProps>`
 
   background: var(--white);
 
-  margin: 40px 0;
+  margin: 20px 0;
 
   border-top-left-radius: 65px;
   border-bottom-left-radius: 65px;
@@ -65,6 +65,7 @@ export const Footer = styled.footer`
   flex-direction: column;
   height: 50%;
   padding: 20px 40px;
+  margin-top: 20px;
 
   overflow: scroll;
 
