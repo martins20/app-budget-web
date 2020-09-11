@@ -4,6 +4,7 @@ export const Container = styled.div`
   margin-top: 40px;
   height: 100%;
   width: 100%;
+  max-width: 1500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
