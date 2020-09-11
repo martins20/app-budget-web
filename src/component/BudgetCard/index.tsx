@@ -21,7 +21,7 @@ interface Budget {
     po_amount: number;
     days_amount: number;
     created_at: string;
-    total: number;
+    total_price: number;
   };
 }
 
@@ -34,7 +34,7 @@ const BudgetCard: React.FC<Budget> = ({ budget }: Budget) => {
     po_amount,
     days_amount,
     created_at,
-    total,
+    total_price,
   } = budget;
 
   // Generating a description
@@ -62,10 +62,15 @@ const BudgetCard: React.FC<Budget> = ({ budget }: Budget) => {
     const colorIndex = Math.floor(Math.random() * 4);
     return colors[colorIndex];
   };
+
+  const formated_price = new Intl.NumberFormat('en-IN', {
+    maximumSignificantDigits: 3,
+  }).format(total_price);
+
   return (
     <Container key={id}>
       <Color color={pickHandleColor()} />
-      <Price>$ {total}</Price>
+      <Price>$ {formated_price}</Price>
       <Days>{days_amount} days</Days>
       <Date>
         <Moment format="DD/MM/YY">{created_at}</Moment>

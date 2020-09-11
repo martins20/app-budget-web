@@ -47,7 +47,7 @@ const SignIn: React.FC = () => {
     // return history.push('/dashboard');
     if (
       checkFormIsValid({ email, password, passwordConfirm, setError }) &&
-      passwordConfirm.length > 0 &&
+      passwordConfirm.length > 5 &&
       passwordConfirm === password
     ) {
       try {

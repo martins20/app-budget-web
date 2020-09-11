@@ -16,6 +16,11 @@ export const Container = styled.div`
   flex-direction: column;
 
   position: relative;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 `;
 
 export const Color = styled.div`

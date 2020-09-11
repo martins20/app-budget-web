@@ -21,10 +21,11 @@ export const Header = styled.header`
   align-items: center;
   flex-direction: column;
 
-  height: 400px;
+  height: 500px;
   border-bottom: 0.5px solid var(--light-gray);
 
   h1 {
+    margin: 35px 0;
     color: var(--back);
   }
 
