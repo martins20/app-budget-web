@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  shouldShow: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   z-index: 2;
 
   grid-area: CB;
@@ -14,6 +18,8 @@ export const Container = styled.div`
 
   box-shadow: 1px 10px 15px 10px rgba(0, 0, 0, 0.03);
   padding: 30px;
+
+  display: ${props => (props.shouldShow ? 'block' : 'none')};
 `;
 
 export const Header = styled.header`
@@ -60,21 +66,5 @@ export const Footer = styled.footer`
 
   ::-webkit-scrollbar {
     display: none;
-  }
-`;
-
-export const Warning = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10%;
-
-  > span {
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--gray);
   }
 `;

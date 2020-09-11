@@ -29,7 +29,7 @@ const MainContainer: React.FC = () => {
           <SearchButton>
             <SearchIcon />
           </SearchButton>
-          <SearchInput placeholder="Search here" />
+          <SearchInput placeholder="Search projects here" />
         </SearchContainer>
         <NotificationContainer>
           <NotificationIcon />
