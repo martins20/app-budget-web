@@ -37,8 +37,6 @@ const Routes = () => (
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignUp} />
       <PrivateRoute path="/dashboard" component={Dashboard} />
-      <PrivateRoute path="/budgets" component={Dashboard} />
-      <PrivateRoute path="/settings" component={Dashboard} />
       <Route path="*" component={() => <Redirect to="/dashboard" />} />
     </Switch>
   </BrowserRouter>

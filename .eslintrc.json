@@ -30,6 +30,7 @@
     "react/jsx/one-expression-per-line": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
+    "array-callback-return": "off",
     "camelcase": "off",
     "@typescript-eslint/explicit-funtion-return-type": [
       "error",

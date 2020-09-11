@@ -6,6 +6,12 @@ export const Container = styled.div`
   background: var(--main-background);
 
   padding: 80px;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Header = styled.div`
@@ -95,7 +101,3 @@ export const FilterContainer = styled.div`
     cursor: pointer;
   }
 `;
-
-export const SelectButton = styled.div``;
-
-export const DropBoxMenuIcon = styled.div``;

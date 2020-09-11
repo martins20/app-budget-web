@@ -1,5 +1,20 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+
+  @media (max-width: 1500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
 
 export const Header = styled.header``;

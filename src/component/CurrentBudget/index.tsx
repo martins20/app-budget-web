@@ -29,58 +29,13 @@ const CurrentBudget: React.FC<Budget> = ({
         <h1>Total Project</h1>
         <img
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-          alt="Project Photo"
+          alt="Project"
         />
 
         <b>$ 12.908</b>
         <small>125 days</small>
       </Header>
       <Footer>
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
-        <CargoItem
-          cargo="Developer"
-          color="#432cff"
-          mathRecipe="1000 x 1 + 15%"
-        />
         <CargoItem
           cargo="Developer"
           color="#432cff"

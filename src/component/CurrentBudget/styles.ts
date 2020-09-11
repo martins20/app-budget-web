@@ -21,7 +21,7 @@ export const Header = styled.header`
   align-items: center;
   flex-direction: column;
 
-  height: 50%;
+  height: 400px;
   border-bottom: 0.5px solid var(--light-gray);
 
   h1 {

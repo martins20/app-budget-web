@@ -10,8 +10,8 @@ import { PencilAlt } from '@styled-icons/heroicons-outline/';
 import { CaretDown } from '@styled-icons/boxicons-regular/';
 
 const iconNavigationCss = css`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 `;
 
 const iconHeaderCss = css`
@@ -70,6 +70,11 @@ export const OptionsIcon = styled(DotsVerticalRounded)`
   height: 30px;
 
   fill: var(--black);
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 `;
 
 // Heading Icons

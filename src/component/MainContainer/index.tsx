@@ -19,8 +19,6 @@ import {
   Heading,
   Title,
   FilterContainer,
-  SelectButton,
-  DropBoxMenuIcon,
 } from './styles';
 
 const MainContainer: React.FC = () => {
@@ -44,9 +42,7 @@ const MainContainer: React.FC = () => {
         <FilterContainer>
           <span>Sort By</span>
           <strong>Recent Projects</strong>
-          <SelectButton>
-            <FilterIcon />
-          </SelectButton>
+          <FilterIcon />
         </FilterContainer>
       </Heading>
 
